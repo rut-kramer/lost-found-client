@@ -1,0 +1,23 @@
+body{
+    /* direction: rtl; */
+    text-align: center;
+}
+h2{
+    margin-top: 02vh;
+    text-align: center;
+}
+div{
+    direction: rtl;
+    text-align: center;
+}
+button{
+    align-self: center;
+}
+h3{
+    margin: 15vh;
+    color: crimson;
+    font-weight: bold;
+}
+.btn-secondary{
+    margin: 3vh;
+}

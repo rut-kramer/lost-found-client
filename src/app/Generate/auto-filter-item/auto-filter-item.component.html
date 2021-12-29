@@ -1,0 +1,37 @@
+
+
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>פריט</mat-label>
+    <input type="text"
+           placeholder="התחל להקליד"
+           aria-label="Number"
+           matInput
+           [formControl]="itemControl"
+           [matAutocomplete]="auto"
+           (keydown.enter)="$event.preventDefault()"
+
+           >
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"  (optionSelected)="SelectedItem($event)">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option.ItemName">
+        {{option.ItemName}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+
+
+
+
+
+<!-- | async 
+   --><!-- <mat-option *ngFor="let option of filteredOptions | async" [value]="option.ItemName">  -->
+       <!-- <mat-form-field>
+    <input type="text" placeholder="בחר מוצר" aria-label="Number" matInput [formControl]="itemControl" [matAutocomplete]="auto">
+    <mat-autocomplete  #auto="matAutocomplete" (optionSelected)="SelectedItem($event)">
+      <mat-option *ngFor="let option of filteredOptions" [value]="option.ItemName"> 
+        
+        {{option.ItemName}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field> -->
+<!-- (keydown.enter)="$event.preventDefault()" -->

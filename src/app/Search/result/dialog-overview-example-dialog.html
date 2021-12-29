@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>יצירת קשר- שליחת מייל למאבד</h1>
+<div mat-dialog-content>
+  <p>מה המסר שתרצה להעביר למאבד?</p>
+  <mat-form-field>
+    <mat-label>טקסט ההודעה</mat-label>
+    <input matInput [(ngModel)]="messageText">
+  </mat-form-field>
+</div>
+ <div >
+ <!--mat-dialog-actions -->
+ <!-- <button mat-stroked-button color="warn">Warn</button> -->
+
+  <button type="button" class="btn btn-secondary" (click)="onNoClick()">No Thanks</button>
+  <button type="button" class="btn btn-secondary" [mat-dialog-close]="messageText" cdkFocusInitial>Ok</button>
+</div>

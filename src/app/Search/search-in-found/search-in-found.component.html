@@ -1,0 +1,12 @@
+<form #Form name="form" id="form" (ngSubmit)="Search()">
+  <p><label>מה איבדת?</label></p>
+  <app-auto-filter-category (CategorySelected)="SelectedCategory($event)"></app-auto-filter-category>
+  
+  <p><label>היכן איבדת?</label></p>
+  <!-- google maps -->
+  <div>
+    <app-agm [CompaniesList]="companies" (selectLocation)="selectedLocation($event)" (selectRadius)="selectedRadius($event)"></app-agm>
+  </div>
+  <button class="btn btn-secondary" name="submit" type="submit" >חפש</button>
+ 
+   </form>

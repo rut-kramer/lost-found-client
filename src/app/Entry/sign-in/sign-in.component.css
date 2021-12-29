@@ -1,0 +1,103 @@
+#form{
+    background-color: #343a40;
+    direction: rtl;
+    /* width: 50%;
+    text-align: center;
+    display: inline-block; */
+}
+/* .example-full-width{
+    background-color: #343a40;
+
+} */
+
+
+.spinner{
+    height: 172.02px;
+    padding: 27.5%;
+    text-align: center;
+}
+/* .example-full-width :hover, :active, :focus {
+        background-color: mat-color(background, hover);
+      } 
+      .selected {
+        background-color: mat-color(primary, lighter, 0.5);
+        color: mat-color(foreground, text);
+      } */
+.example-full-width{
+    text-align: end;
+    
+    
+     
+
+}
+
+
+
+
+::ng-deep.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: rgba(255, 255, 255, 0.397);
+    color: white;
+}
+/* ::ng-deep.mat-form-field-infix{
+    color: white;
+} */
+
+/* העברתי לAPP  
+::ng-deep.mat-dialog-container {
+    /* padding: 0px !important; *-/
+    background-color: #343a40 !important;
+}
+
+::ng-deep.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: rgba(255, 255, 255, 0.397);
+    color: white;
+}
+::ng-deep.mat-form-field-infix{
+    color: white;
+}
+::ng-deep.mat-form-field.mat-focused .mat-form-field-ripple{background-color: rgb(209, 5, 39) !important}
+::ng-deep.mat-input-element{caret-color: rgb(209, 5, 39) !important}
+::ng-deep.mat-form-field.mat-focused .mat-form-field-label{color: rgb(209, 5, 39)}
+::ng-deep.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick{color: rgb(209, 5, 39) !important}
+
+::ng-deep.mat-form-field.mat-focused {color: rgb(250, 103, 255) !important}
+
+
+
+::ng-deep.mat-form-field-type-mat-native-select.mat-focused:not(.mat-form-field-invalid) .mat-form-field-infix::after{color:#eeff00 !important}
+
+::ng-deep.mat-flat-button.mat-primary,.mat-raised-button.mat-primary,.mat-fab.mat-primary,.mat-mini-fab.mat-primary{background-color:#eeff00  !important;}
+::ng-deep.mat-form-field-type-mat-native-select.mat-focused:not(.mat-form-field-invalid) .mat-form-field-infix::after{color:#eeff00}
+ */
+
+
+
+
+
+
+
+
+
+
+/* 
+.mat-primary .mat--pseudo-checkbox-checked,.mat-primary .mat-pseudo-checkbox-indeterminate{background:#3f51b5}
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled){color:#3f51b5}
+.mat-badge-content{color:#fff;background:#3f51b5} */
+
+
+
+
+
+
+
+/* ::ng-deep.mat-checkbox-indeterminate.mat-primary .mat-checkbox-background,.mat-checkbox-checked.mat-primary .mat-checkbox-background{background-color:#b53f3f !important;} */
+
+/* 
+::ng-deep.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-primary .mat-ripple-element,
+  .mat-checkbox:active:not(.mat-checkbox-disabled).mat-primary .mat-ripple-element{background:#b53f3f !important;}
+  ::ng-deep.mat-chip.mat-standard-chip.mat-chip-selected.mat-primary{background-color:#b53f3f;color:#fff !important;} */
+
+
+
+
+

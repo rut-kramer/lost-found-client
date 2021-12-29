@@ -1,0 +1,167 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<!-- <div class="container"> 
+  <a href="#demo" data-toggle="collapse"><span class=”icon”>Collapsible</span></a>
+
+  <div id="demo" class="collapse">
+  Sample Code 
+  </div>
+</div> -->
+
+<body>
+  <h2 *ngIf="item == 'Found'">
+   המציאה נשמרה<br />
+   אם תהיינה התאמות נוספות, תשלח לך הודעה על כך<br />
+  </h2>
+  <h2 *ngIf="item == 'Lost'">
+    האבידה נשמרה<br />
+    אם תהיינה התאמות נוספות, תשלח לך הודעה על כך<br />
+  </h2>
+<h3 *ngIf ="founds.length == 0 && losts.length == 0 "> אין כרגע התאמות במערכת</h3>
+  <div class="panel-group"  [hidden]="!isLost" id="accordion">
+    <div *ngFor="let m of founds; let i = index" class="panel panel-default">
+
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{i}}">
+            פריט: {{itemsNames[i]}}  ,&nbsp;&nbsp;&nbsp;  {{m.ItemName}} </a> 
+        </h4>
+      </div>
+
+      <div id="collapse{{i}}" class="panel-collapse collapse">
+        <div class="panel-body"> מציאה מספר: {{i+1}}&nbsp;
+          <label> פריט: {{itemsNames[i]}}</label>&nbsp;
+          <label> תאור: {{m.FoundDescription}}</label>&nbsp;
+          <!-- <label> כתובת: {{addresses[i]}}</label><br> -->
+          <label> תאריך: {{m.FoundDate | date: 'yyyy-MM-dd'}}</label>&nbsp;</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="panel-group"  [hidden]="isLost" id="accordion">
+    <div *ngFor="let m of losts; let i = index" class="panel panel-default">
+
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{i}}">
+            פריט: {{itemsNames[i]}}  , &nbsp;&nbsp;&nbsp; {{m.ItemName}} </a> 
+        </h4>
+      </div>
+
+      <div id="collapse{{i}}" class="panel-collapse collapse">
+        <div class="panel-body"> מציאה מספר: {{i+1}}&nbsp;
+          <label> פריט: {{itemsNames[i]}}</label>&nbsp;
+          <label> תאור: {{m.LostDescription}}</label>&nbsp;
+          <!-- <label> כתובת: {{addresses[i]}}</label><br> -->
+          <label> תאריך: {{m.LostDate | date: 'yyyy-MM-dd'}}</label>&nbsp;</div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+<!-- 
+  <div class="container">
+   
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header">
+          <a class="card-link" data-toggle="collapse" data-target="#collapseOne">
+            Collapsible Group Item #1
+          </a>
+        </div>
+        <div id="collapseOne" class="collapse show" data-parent="#accordion">
+          <div class="card-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+          Collapsible Group Item #2
+        </a>
+        </div>
+        <div id="collapseTwo" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+            Collapsible Group Item #3
+          </a>
+        </div>
+        <div id="collapseThree" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+      
+
+
+
+
+<button  class="btn btn-secondary" (click)="navigate(3)">הפריטים שלי</button>
+&nbsp;
+&nbsp;
+<button  class="btn btn-secondary" *ngIf="item == 'Found' || item == 'Lost'" [hidden]="!display" (click)="addItem()">שמירת פריט נוסף</button>
+<div [hidden]="display" >
+  <p>
+<button  class="btn btn-secondary" (click)="navigate(1)">שמירת אבידה</button>
+&nbsp;
+&nbsp;
+<button  class="btn btn-secondary" (click)="navigate(2)">שמירת מציאה</button>
+</p>
+</div>
+<!-- &nbsp;
+&nbsp; -->
+</body>
+
+<!-- 
+
+  <button data-toggle="collapse" data-target="#demo">Collapsible</button>
+
+  <div id="demo" class="collapse">
+  Lorem ipsum dolor text....
+  </div> -->
+
+<!-- 
+  <div class="container">
+    <h2>Simple Collapsible</h2>
+    <p>Click on the button to toggle between showing and hiding content.</p>
+    <input type="button" value="Simple collapsible" class="btn btn-primary" data-toggle="collapse" data-target="#demo"/>
+    <div id="demo" class="collapse">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+  </div> -->
+
+  <!-- <div class="box-sizing" [hidden]="!isLost">
+    <div class="crd" *ngFor="let m of founds; let i = index" (click)="openDialogF(m)">
+      <label> מציאה מספר: {{i+1}}</label>&nbsp;
+     
+      <label> פריט: {{itemsNames[i]}}</label>&nbsp;
+      <label> תאור: {{m.FoundDescription}}</label> &nbsp;
+       <label> כתובת: {{addresses[i]}}</label><br> 
+      <label> תאריך: {{m.FoundDate | date: 'yyyy-MM-dd'}}</label>&nbsp;
+      <p></p>
+      <p></p>-->
+      <!-- <input type="date" name="s" (value)="SuitableLosts[i].LostDate">
+<label> משתמש: {{m.UserId}}</label><br>
+<label> שם: {{m.ItemName}}</label><br><br> -->
+ <!--    </div>
+  </div> -->
+  

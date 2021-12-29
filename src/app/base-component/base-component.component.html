@@ -1,0 +1,67 @@
+<!-- <h1> 
+    פרוייקט
+</h1>-->
+<!-- <button id="tyer" routerLink="">?דף הבית</button>
+<h2>{{currentUser.UserName}} ברוך הבא</h2>
+<div>
+<a id="search" >חיפוש</a>
+<button routerLink="searchInLost">חיפוש באבידות</button>
+<label name="tyer" [hidden]="currentUser.UserStatus"><button  routerLink="searchInFound">חיפוש במציאות</button>       
+<button routerLink="saveLost">שמירת אבידה</button></label> -->
+<!-- <button routerLink="saveFound">שמירת מציאה</button> -->
+<!-- <button routerLink="myItems">הפריטים שלי</button></div>
+<router-outlet></router-outlet> -->
+<!-- *ngif="currentUser.UserStatus=='true'"  
+routerLink=""-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+              <img id="img" src="http://localhost:50886/Images/logo.png" alt="logo"/>
+                <a class="navbar-brand" routerLink="/base"> בית <span class="glyphicon glyphicon-home"></span></a>
+                <a class="navbar-brand" id="b" (click)="click()"> התנתק <span class="glyphicon glyphicon-share"></span></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="dropdown"   [hidden]="currentUser.UserStatus">
+                    <a class="dropdown-toggle" data-toggle="dropdown">אבדה</a>
+                    <ul class="dropdown-content">
+                      <li><a (click)=clicky(10) routerLink="search/searchInFoun">חיפוש אבדה</a></li>
+                      <li><a (click)=clicky(11) routerLink="search/saveLos">שמירת אבדה</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">מציאה</a>
+                    <ul class="dropdown-content">
+                      <li><a (click)=clicky(12) routerLink="search/searchInLos">חיפוש מציאה</a></li>
+                      <li><a (click)=clicky(13) routerLink="search/saveFoun">שמירת מציאה</a></li>
+                    </ul>
+                  </li>
+                <!-- <li><a routerLink="search">חיפוש</a></li>
+                <li><a routerLink="searchInLost">חיפוש באבדות</a></li>
+                <li [hidden]="currentUser.UserStatus"><a routerLink="searchInFound">חיפוש במציאות</a></li> -->
+                <li><a routerLink="myItems">הפריטים שלי</a></li>
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">
+                      Dropdown link
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item">Link 1</a>
+                      <a class="dropdown-item">Link 2</a>
+                      <a class="dropdown-item">Link 3</a>
+                    </div>
+                  </li> -->
+            </ul>
+            <div>
+                <a class="navbar-brand">{{currentUser.UserName}}</a>
+                <img [hidden]="!currentUser.UserStatus" id="img" [src]="src" alt="logo" style="width:40px;"/>
+            </div>
+        </div>
+    </nav>
+    <div id="main">
+    <router-outlet></router-outlet></div>
+</body>

@@ -1,0 +1,32 @@
+
+
+<mat-form-field class="example-full-width" appearance="outline">
+  <mat-label>קטגוריה</mat-label>
+  <input type="text" placeholder="התחל להקליד" aria-label="Number" matInput [formControl]="categoryControl"
+    [matAutocomplete]="auto" (keydown.enter)="$event.preventDefault()">
+  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="SelectedCategory($event)"
+    style="text-align: right;">
+    <mat-option *ngFor="let option of filteredOptions | async" [value]="option.CategoryName">
+      {{option.CategoryName}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+
+
+
+
+<!-- </form> -->
+<!-- <form >
+  <mat-form-field >
+    <input type="text" placeholder="בחר קטגוריה" aria-label="Number" matInput [formControl]="categoryControl" [matAutocomplete]="auto">
+    <mat-autocomplete  #auto="matAutocomplete" (optionSelected)="SelectedCategory($event)">
+    
+  
+      <mat-option  *ngFor="let option of filteredOptions | async" [value]="option.CategoryName">
+        {{option.CategoryName}}
+      </mat-option>
+     </mat-autocomplete>
+  </mat-form-field>
+</form>
+style="" -->
+<!-- <form class="example-form"> -->

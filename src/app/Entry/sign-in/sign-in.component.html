@@ -1,0 +1,35 @@
+<!-- <form id="form"> -->
+<div class="example-full-width">
+  <h2 style="color: rgb(209, 5, 39);">התחברות</h2>
+  <div *ngIf="isSpinner"  class="spinner"><div class="spinner-grow text-danger"></div></div>
+  <div *ngIf="!isSpinner" style="text-align: center;">
+  <!-- <mat-form-field style="direction: rtl;"  appearance="fill">
+    <mat-label #UserName>דואר אלקטרוני:</mat-label>
+    <input matInput type="email" name="userMail" [(ngModel)]="userMail" />
+  </mat-form-field> -->
+  
+  <mat-form-field appearance="fill">
+    <mat-label>הכנס מייל</mat-label>
+    <input matInput placeholder="pat@example.com" [formControl]="email" required
+      [(ngModel)]="userMail">
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field><br>
+
+  <mat-form-field style="direction: rtl;"  appearance="fill">
+    <mat-label #UserPassword>סיסמא:</mat-label>
+    <input matInput type="password" name="userPassword" [(ngModel)]="userPassword" />
+  </mat-form-field></div>
+  <div mat-dialog-actions>
+    <!-- <button mat-raised-button color="accent" (click)="onNoClick()">ביטול</button>
+    <button mat-button color="accent">כניסה</button>  -->
+    <button type="button" [disabled]="isSpinner" class="btn btn-outline-danger" (click)="signIn()">כניסה</button>
+    <button type="button" [disabled]="isSpinner" class="btn btn-outline-danger" (click)="onNoClick()">ביטול</button>
+
+    <!-- <button mat-button [mat-dialog-close]="messageText" cdkFocusInitial>Ok</button> -->
+  </div>
+</div>
+
+<!-- </form> -->
+<!-- #form (ngSubmit)="signIn()"
+
+ type="submit" [disabled]="form.invalid" -->

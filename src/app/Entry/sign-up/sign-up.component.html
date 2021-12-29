@@ -1,0 +1,59 @@
+<!-- <form id="form" #form (ngSubmit)="signUp()">
+<label #UserMail>דוא"ל:</label><br/>
+  <input type="email" name="userMail"  required="required"  [(ngModel)]="newUser.UserMail"/><br/>
+  <label #UserName>שם:</label><br/>
+  <input type="text" name="userName" required="required" [(ngModel)]="newUser.UserName" /><br/>
+  <label #UserMobile>טלפון:</label><br/>
+  <input type="tel" name="userMobile"  [(ngModel)]="newUser.UserMobile" /><br/>
+    <label #UserPassword>סיסמא:</label><br/>
+  <input type="password" name="userPassword"  required="required"  [(ngModel)]="newUser.UserPassword" /><br/>
+  <label #UserPassword>אימות סיסמא :</label><br/>
+  <input id="trueUserPassword" type="password" name="trueUserPassword" required="required"/><br/>
+  <input type="submit" [disabled]="form.invalid" value="הרשמה" />
+</form> -->
+
+
+<div class="example-full-width">
+  <h2 style="color: rgb(209, 5, 39);">הרשמה</h2>
+  <div *ngIf="isSpinner" class="spinner">
+    <div class="spinner-grow text-danger"></div>
+  </div>
+  <div *ngIf="!isSpinner">
+    <div *ngIf="!isSpinner" style="text-align: center;">
+      <!-- <mat-form-field style="direction: rtl;" appearance="fill">
+        <mat-label #UserMail>דואר אלקטרוני:</mat-label>
+        <input matInput type="email" name="userMail" [(ngModel)]="newUser.UserMail" />
+      </mat-form-field> -->
+
+      <mat-form-field appearance="fill">
+        <mat-label>הכנס מייל</mat-label>
+        <input matInput placeholder="pat@example.com" [formControl]="email" required
+          [(ngModel)]="newUser.UserMail">
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field><br>
+
+      <mat-form-field style="direction: rtl;" appearance="fill">
+        <mat-label #UserName>שם:</mat-label>
+        <input matInput type="text" name="userName" [(ngModel)]="newUser.UserName" />
+      </mat-form-field>
+
+      <mat-form-field style="direction: rtl;" appearance="fill">
+        <mat-label #UserMobile>טלפון:</mat-label>
+        <input matInput type="tel" name="UserMobile" [(ngModel)]="newUser.UserMobile" />
+      </mat-form-field>
+
+      <mat-form-field style="direction: rtl;" appearance="fill">
+        <mat-label #UserPassword>סיסמא:</mat-label>
+        <input matInput type="password" name="userPassword" [(ngModel)]="newUser.UserPassword" />
+      </mat-form-field>
+      <mat-form-field style="direction: rtl;" appearance="fill">
+        <mat-label #UserPassword>אימות סיסמא:</mat-label>
+        <input matInput type="password" id="trueUserPassword" name="trueUserPassword" />
+      </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+      <button type="button" [disabled]="isSpinner" class="btn btn-outline-danger" (click)="signUp()">כניסה</button>
+      <button type="button" [disabled]="isSpinner" class="btn btn-outline-danger" (click)="onNoClick()">ביטול</button>
+    </div>
+  </div>

@@ -1,0 +1,83 @@
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+<!-- 
+<body>
+<div id="header">
+  <!- <div> ->
+    <a class="btn btn-warning" role="button" routerLink="/signIn">כניסה</a>
+      <!- </div>    ->
+  <!- <div> ->
+    <a type="button" class="btn btn-success" routerLink="/signUp">הרשמה</a>
+  <!- </div> ->
+  <!- <div> ->
+    <a type="button" class="btn btn-primary" routerLink="/signUpCompany">הרשמת חברה</a> 
+  <!- </div>    ->
+  </div> 
+  <div>
+    <h1>לוגווווו</h1>
+    הסבר על האתר
+  </div>
+ <router-outlet></router-outlet>
+ </body> -->
+ <html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+</head>
+ <body>
+
+  <nav class="navbar navbar-expand-sm navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand">"מצאתי!!!"</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <!--  </a>-->
+        <li class="nav-item active"><a routerLink="">Home</a></li>
+        <li><a (click)="openDialogLogin('m')">  כניסה   <span class="glyphicon glyphicon-log-in"></span></a></li>
+        <li><a (click)="openDialogSignUp('m')">  הרשמה  <span class="glyphicon glyphicon-user"></span></a></li>
+        <li><a (click)="openDialogSignUpCompany('m')">  הרשמת חברה  <span class="material-icons">location_city</span></a></li>
+      </ul>
+      <!-- routerLink="/signUp" routerLink="/signUpCompany"-->
+    </div>
+  </nav><i class='fas fa-city'> </i>
+  <router-outlet></router-outlet>
+  <!-- <md-toolbar color="primary">Awesome toolbar</md-toolbar> -->
+  <!-- <div id="body"></div> -->
+
+  <div id="text">
+    
+    <!-- <h1>לוגווווו</h1> -->
+   <h2> אודות 'מצאתי' האתר החברתי להשבת אבידה</h2><br>
+   <p>    עוגמת נפש רבה נגרמת לא פעם כאשר אדם מאבד מחפציו  ובמיוחד מהיקרים לו.<br></p>
+   <p>לעיתים אף אנשים מוצאים חפצים ומאוד רוצים לעזור לזולת ולהחזיר את החפץ לבעליו.</p>
+   <p> אך נמנע מהם משום חוסר הסיכוי למצוא את הבעלים.  <br></p>
+   <p>מצאתי הינו אתר חברתי הנבנה במטרה לסייע לאנשים לאתר פריטים שאבדו להם או את בעלי הפריט שמצאו,</p>
+   <p> בקלות בפשטות ויעילות ובכך למנוע עוגמת נפש והפסד כספי.</p>
+   <p>  וכן להביא לרצון של עזרה הדדית בהשבת אבדות לבעליהן.<br></p>
+   <p>המערכת תאפשר לכל אדם בכל גיל להרשם אליה </p>
+   <p>     ולאחר מכן יוצגו לו האופציות הבאות: חיפוש מוצר אבוד ו/או הכנסת מוצר שנמצא ואיתור בעליו.<br></p>
+   <p>המשתמש יזין קריטריונים כגון: שם, תיאור-מוצר, קטגוריה, תאריך מציאה/אבדה,מיקום ועוד.<br></p>
+   <p>ובמידה ותמצא התאמה בין אבדה למציאה, תשלח הודעת מייל למאבד ולמוצא.<br></p>
+     <p> המערכת תאפשר שמירת חיפושים במידה ולא נמצאה התאמה</p>
+  <p> ובכל הוספת חיפוש תבצע שוב בדיקת התאמה לחיפושים השמורים שטרם נמצאה התאמתם.<br></p>
+   <p>עם מצאתי לא נורא לאבד... וכיף לגמול חסדים!!!!</p>
+ <br>
+<br>  
+   <p>הֲשָׁבַת אֲבֵדָה היא מצוות עשה שבין אדם לחברו המחייבת להחזיר אבדה לבעליה. </p>
+   <p><br>במצווה זו מחויב המוצא כל זמן שהאבדה אצלו גם אם הבעלים התייאש מהאבדה,</p>
+   <p> וכל זמן שלא רוצה להשיב את האבדה מבטל מצוות עשה.<br></p>
+   <p>  מלבד מצוות ה'עשה', ישנה מצוות לא תעשה 'לא תוכל להתעלם' האוסרת על המוצא להתעלם מהאבדה שמצא</p>
+<br><br>
+
+
+  </div>
+ 
+  </body>
+ </html>
+    <!-- routerLink="/signIn" -->

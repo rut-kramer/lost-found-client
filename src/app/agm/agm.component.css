@@ -1,0 +1,30 @@
+agm-map {
+  height: 70%;
+  width: 100%;
+}
+
+#container{
+  height: 55vh;
+  ;
+  width: 100%;
+}
+
+
+input.form-control{
+width: 36vw;
+
+}
+* {
+  /* font-family: Roboto, "Helvetica Neue", sans-serif */
+  /* font-family: Lato; */
+}
+
+a {
+  color: darkblue;
+}
+.example-full-width{
+  text-align: center; 
+  direction: ltr;
+  width: 30.5vw;
+
+}

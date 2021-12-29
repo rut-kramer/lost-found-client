@@ -1,0 +1,90 @@
+<body>
+  <router-outlet></router-outlet>
+
+  <!-- <p>
+  result works!
+<button (click)="click()">click</button>
+</p> -->
+  <div style="min-height: 200px;max-height: 400px;overflow-x: hidden;background-color: white;">
+    <!-- <form> -->
+      <div class="box-sizing"  [hidden]="!isLost">
+        <h2 *ngIf="SuitableLosts.length==0">לא נמצאו במערכת אבדות תואמות</h2>
+        <div class="crd" *ngFor="let m of SuitableLosts; let i = index" (click)="openDialogL(m)">
+          <label> מציאה מספר: {{i+1}}</label><br>
+          <label> פריט: {{itemsNames[i]}}</label><br>
+          <label> תאור: {{m.LostDescription}}</label><br>
+          <label> כתובת: {{m.LostbAddress}}</label><br>
+          <label> תאריך: {{m.LostDate | date: 'MM/dd/yyyy'}}</label><br>
+          <p></p>
+          <p></p>
+          <!-- <input type="date" name="s" (value)="SuitableLosts[i].LostDate">
+    <label> משתמש: {{m.UserId}}</label><br>
+    <label> שם: {{m.ItemName}}</label><br><br> -->
+        </div>
+      </div>    
+      <div class="box-sizing" [hidden]="isLost">
+        <h2 *ngIf="SuitableFounds.length==0">לא נמצאו במערכת מציאות תואמות</h2>
+        <div class="crd" *ngFor="let m of SuitableFounds; let i = index" (click)="openDialogF(m)">
+          <label> מציאה מספר: {{i+1}}</label><br>
+          <label> פריט: {{itemsNames[i]}}</label><br>
+          <label> תאור: {{m.FoundDescription}}</label><br>
+          <label> כתובת: {{m.FoundAddress}}</label><br>
+          <label> תאריך: {{m.FoundDate | date: 'yyyy/MM/dd'}}</label><br>
+          <p></p>
+          <p></p>
+          <!-- <input type="date" name="s" (value)="SuitableLosts[i].LostDate">
+    <label> משתמש: {{m.UserId}}</label><br>
+    <label> שם: {{m.ItemName}}</label><br><br> -->
+        </div>
+      </div>
+  </div>
+  <footer class="footer" [hidden]="!isLost">
+    <h3>לא מצאת אבדה התואמת את מציאתך? <br>באפשרותך לשמור אותה במאגר ואם תמצא התאמה בעתיד ניצור איתך קשר</h3>
+    <button type="button" class="btn btn-secondary" (click)="navigate()">שמירת מציאה</button>
+    <!-- class="fixed-footer" -->
+    <!-- <button routerLink="saveLost">שמירת אבידה</button> -->
+  </footer>  
+  <footer class="footer" [hidden]="isLost">
+    <h3>לא מצאת מציאה התואמת את אבדתך? <br>באפשרותך לשמור אותה במאגר ואם תמצא התאמה בעתיד ניצור איתך קשר</h3>
+    <button type="button" class="btn btn-secondary" (click)="navigate()">שמירת אבדה</button>
+    <!-- class="fixed-footer" -->
+    <!-- <button routerLink="saveLost">שמירת אבידה</button> -->
+  </footer>
+</body>
+<!-- m.ItemId==2
+  !(-1)
+
+   LostId:Number;
+    CategoryId:Number;
+    ItemId :Number;
+    ItemName:String;
+    MaterialId:Number;
+    LostDescription:String;
+    LostDate:Number;
+    LostLocation:Number;
+    SearchRadius:Number; 
+    LostImage:String;
+    UserId:Number;
+
+  
+  
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+  </label> <br/>
+  <label>
+    Category:
+    <input type="text" formControlName="category">
+  </label> <br/>
+  <label>
+    Units:
+    <input type="text" formControlName="unit">
+  </label> <br/>
+  <label>
+    Price:
+    <input type="text" formControlName="price">
+  </label>   <br/>
+  <button type="submit">שמירה</button>
+</form> ->
+-->

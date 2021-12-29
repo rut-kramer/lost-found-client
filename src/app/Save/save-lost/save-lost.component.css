@@ -1,0 +1,47 @@
+#form{
+    direction: rtl;
+    text-align: center;
+}
+/* .mat-input-underline {
+    background-color: #FF0000; /* replace this color with your accent color hex code *
+    }     */
+
+
+    .example-full-width {
+        /* width: 100%; */
+        text-align: left;
+      width: 30.5vw;
+      min-width: 5vw;
+      direction: ltr;
+       }
+
+       .dropdown {
+        position: relative;
+        display: inline-flex;
+        height: 50px;
+        margin: 0;
+        font-size: 19px;
+        font-weight: bold;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        width: 180px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 1;
+      }
+      
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .plus {
+        height: 25px; width: 25px; line-height: normal; margin: 1vw;
+        border-style: double; border-color: rgb(117, 147, 204); border-radius: 50%;;
+      }
+      .color {
+         width: 20px; height: 20px; margin: 2px; display: inline-block;
+         border: 1px gray;
+        }

@@ -1,0 +1,43 @@
+/* div{display: inline;}*/
+
+/* form{
+    text-align: center;
+} */
+
+/* .mat-input-element{
+    text-align: center;
+
+ }*/
+/* .example-form {
+    text-align: center;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  } 
+   */
+  .example-full-width {
+    /* width: 100%; */
+    text-align: left;
+    width: 30.5vw;
+    direction: ltr;
+
+   }/*
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+/*    *
+  .example-full-width {
+    width: 100%;
+  } */
+/*  -autocomplete-panel .mat-option.mat-selected:not(.mat-active):not(:hover) {
+    background: #fff;
+}
+*/
+/* האלה Mat מיהם כל ה   ? */
+/* .mat-option.mat-active, .mat-option.mat-selected:not(.mat-option-multiple):not(.mat-option-disabled), .mat-option:focus:not(.mat-option-disabled), .mat-option:hover:not(.mat-option-disabled) {
+background: rgba(0,0,0,.04); 
+}
+  
+*/

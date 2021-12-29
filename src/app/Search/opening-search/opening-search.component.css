@@ -1,0 +1,68 @@
+.example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    background-color: transparent;
+  }
+  button{
+    height: 26vh;
+    width: 26vh;
+    margin: 30vh;
+    margin-top: 38vh;;
+    border-radius: 0rem;
+    /* transform: rotate(50deg); */
+    /* border-top-left-radius: 60%; */
+    /* border-bottom-right-radius: 60%; */
+  }
+  .badge {
+    position: relative;
+    top: -1px;
+    border-radius: 90%;
+    /* height: 70%; */
+    height: 13vh;
+    /* width: 70%; */
+    font-size: 100%;
+    vertical-align: middle;
+    padding-top: 20%;
+    padding-bottom: 20%;
+     transform: rotate(-50deg);    
+     border-color: #afb1b4;
+    border-style: groove;
+  }
+  body{
+    text-align: center;
+    background: linear-gradient(-6deg, #000000fc, #ee00001f);
+    background: linear-gradient(130deg, #ffb4b46b, #6b6b6bc4);
+    background: repeating-linear-gradient(to right top, #fd8787 65%, #ff000000 0%,rgb(212, 212, 212) 100%);
+  }
+  div{
+    transform: rotate(50deg);
+    display: inline-block;
+  }
+  #uu{
+    transform: rotate(0deg);
+    /* display: block; */
+    width: 29%;
+    height: 11%;
+    background-color: #dc3545;
+  }
+  .badge-danger{
+    background-color: #dc3545;
+  }
+  .btn-danger .badge
+  {
+    background-color: #343a40;
+  }
+  #uu1{
+    transform: rotate(0deg);
+    /* display: block; */
+    width: 29%;
+    height: 11%;
+    background-color: #343a40;
+  }
+  /* .btn-lg, .btn-group-lg > .btn {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: 0rem; 
+}*/

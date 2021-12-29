@@ -1,0 +1,39 @@
+<body>
+  <span></span>
+ <!-- margin-top: 62px; -->
+  <div   [hidden]="currentUser.UserStatus" style="    z-index: 99; border-radius: 50%;  ;"> 
+    <button type="button" class="btn btn-dark btn-lg" (click)="navi('infound')">
+      <div id="uu"></div>
+      <span class="badge badge-danger" style="border-style: ridge;">איבדתי</span>
+    </button>
+  </div>
+  <div style="    z-index: 99; border-radius: 50%;  ;"> 
+    <button type="button" class="btn btn-danger btn-lg" (click)="navi('inlost')">
+      <span class="badge badge-dark">מצאתי</span>
+      <div id="uu1"></div>
+    </button>
+   </div>
+  <br>  <br>  
+  <br>  <br>
+  <br>  <br>
+  <br>  <br>
+  <br>  <br>
+  <br>  <br><br>
+  <p style="color: transparent;">opening-search works!</p>
+  <div class="example-button-container">
+    <button  style="background-color: transparent; color: transparent; border: none;" mat-fab color="warn" aria-label="Example icon button with a home icon"> 
+      <!-- <mat-icon>home</mat-icon> -->
+      איבדתי
+    </button>
+  </div>
+
+  <div class="example-button-container">
+    <button mat-fab color="warn" style="background-color: transparent; color: transparent; border: none;" aria-label="Example icon button with a home icon">
+      <!-- <mat-icon>home</mat-icon> -->
+      מצאתי
+    </button>
+  </div>
+  <!-- <button mat-button  cdkFocusInitial>Ok</button> -->
+
+  <!-- <mat-icon svgIcon="thumbs-up" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon> -->
+</body>

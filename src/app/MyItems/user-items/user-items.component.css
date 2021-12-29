@@ -1,0 +1,66 @@
+body{
+    direction: rtl;
+    text-align: center;
+/* }body { */
+    font-family: Arial;}
+
+.table{
+width: 80%;
+}
+
+th{
+    text-align: right;
+}
+
+div{
+  text-align: right;
+    direction: rtl;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+h3{
+      text-align: center;
+      color: rgb(209, 5, 39);
+      background-color: rgba(0,0,0,.12);
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: right;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.badge{    
+  font-size: 16px;
+  background-color: #dc3545;
+}

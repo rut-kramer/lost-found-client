@@ -1,0 +1,171 @@
+<form #Form id="form" (ngSubmit)="Save()">
+  <br />
+
+  <app-auto-filter-category (CategorySelected)="ItemsToCategory($event)"></app-auto-filter-category>
+ <!-- קטגוריה נוכחית -->&nbsp;
+ <mat-form-field *ngIf="isOld" class="example-full-width" appearance="outline">
+  <mat-label id="s3">קטגוריה נוכחית</mat-label>
+  <input matInput disabled [value]="lostCategoryName">
+</mat-form-field>
+<br>
+  <app-auto-filter-item (ItemSelected)="SelectedItem($event)" [hidden]="!renderItems"></app-auto-filter-item>
+  <!-- פריט נוכחי -->&nbsp;
+  <mat-form-field *ngIf="isOld" class="example-full-width" appearance="outline">
+    <mat-label id="s3">פריט נוכחי</mat-label>
+    <input matInput disabled [value]="lostItemName">
+  </mat-form-field>
+
+  <p *ngIf="lost!=null && lost.ItemId===1">
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>שם פריט</mat-label>
+      <input matInput placeholder="הכנס שם פריט" name="lostDescription" [(ngModel)]="lost.ItemName">
+    </mat-form-field>
+     <!-- שם פריט נוכחי -->&nbsp;
+     <mat-form-field *ngIf="isOld" class="example-full-width" appearance="outline">
+      <mat-label id="s3">שם פריט נוכחי</mat-label>
+      <input matInput disabled [value]="oldlost.ItemName">
+    </mat-form-field>
+  </p>
+
+
+  <!-- <br/>{{להזיז איקון ללפני הטקסט  תאריך}}  -->
+  <p>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>תאריך</mat-label>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="lost.LostDate">
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+       <!-- תאריך נוכחי -->&nbsp;
+       <mat-form-field *ngIf="isOld" class="example-full-width" appearance="outline">
+        <mat-label id="s3">תאריך נוכחי</mat-label>
+        <input matInput disabled [value]="oldlost.LostDate | date: 'MM/dd/yyyy'">
+      </mat-form-field>
+  </p>
+  <!-- <br/> -->
+
+  <!-- <br/>  תאור  -->
+  
+  <p>
+    <!-- <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>תאור</mat-label>
+      <textarea matInput placeholder="לבדוק שNGMODEL עובד" name="lostDescription" [(ngModel)]="lost.LostDescription"></textarea>
+    </mat-form-field> -->
+
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label id="s4">תאור</mat-label>
+      <textarea id="textArea" matInput placeholder="לדוג' כובע קנייטש מידה 46 מעט דהוי" name="lostDescription"
+        [(ngModel)]="lost.LostDescription"></textarea>
+    </mat-form-field>
+    <!-- תאור נוכחי -->&nbsp;
+    <mat-form-field *ngIf="isOld" class="example-full-width" appearance="outline">
+      <mat-label id="s3">תאור נוכחי</mat-label>
+      <textarea matInput disabled [value]="oldlost.LostDescription"></textarea>
+    </mat-form-field>
+
+  </p>
+  <!-- <br/> -->
+
+  <!-- <br/>  חומר -->
+  <p>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>חומר</mat-label>
+      <input type="text" placeholder="התחל להקליד" aria-label="Number" matInput [formControl]="materialControl"
+        name="MaterialDescription" [matAutocomplete]="auto" (keydown.enter)="$event.preventDefault()">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="MaterialSelected($event)"
+        style="text-align: right;">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option.MaterialName">
+          {{option.MaterialName}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+  <!-- חומר נוכחי -->&nbsp;
+<mat-form-field *ngIf="isOld" class="example-full-width" appearance="outline">
+  <mat-label id="s3">חומר נוכחי</mat-label>
+  <input matInput disabled [value]="lostMaterialName">
+</mat-form-field>
+
+  </p>
+
+  <!-- <br/>  צבע -->
+  <div>
+    <!-- <mat-form-field class="example-full-width" id="rrt" appearance="outline"> -->
+    <!-- <label>בחר צבע</label><br /> -->
+    <!-- <input type="color" value="#8b0000" (change)="colorSelect($event)"> -->
+    <!-- <select style="width: 60px;"> -->
+      <!-- hover{ background=} -->
+      <!-- <option *ngFor="let c of colors; let i = index" [style.background]="c.ColorName" style=" display: inline-block;"></option> -->
+      <!-- <option value="">
+        <div *ngFor="let c of colors; let i = index" [style.background]="c.ColorName" style="width: 10px; height: 10px; display: inline-block;"></div>
+      </option>
+    </select> -->
+    <label>בחר צבע</label><br />
+    <div class="dropdown">
+      <div  id="p1" class="plus">+</div>
+      <div class="dropdown-content">
+        <div class="color" *ngFor="let c of colors; let i = index" [style.background]="c.ColorName" (click)="colorSelect(i)"></div>
+        <!-- <div click=clicky(10)>חיפוש אבדה</div> -->
+      </div>
+    </div>  
+      <div *ngIf="lost.Color1 != 0" class="dropdown">
+      <div  id="p2" class="plus">+</div>
+      <div class="dropdown-content">
+        <div class="color" *ngFor="let c of colors; let i = index" [style.background]="c.ColorName" (click)="colorSelect(i)"></div>
+        <!-- <div click=clicky(10)>חיפוש אבדה</div> -->
+      </div>
+    </div>   
+     <div *ngIf="lost.Color2 != 0" class="dropdown">
+      <div  id="p3" class="plus">+</div>
+      <div class="dropdown-content">
+        <div class="color" *ngFor="let c of colors; let i = index" [style.background]="c.ColorName" (click)="colorSelect(i)"></div>
+        <!-- <div click=clicky(10)>חיפוש אבדה</div> -->
+      </div>
+    </div>
+
+    <!-- <div  style="position: absolute;">
+      <div *ngFor="let c of colors; let i = index" [style.background]="c.ColorName" onclick="" style="width: 10px; height: 10px; margin: 2px; display: inline-block;"></div>
+    </div> -->
+    <!--matInput mat-</mat-form-field> -->
+  </div>
+  <label>מיקום</label><br />
+  <!-- גוגל מפס -->
+  <div id="Tokyo" class="tabcontent">
+    <app-agm (selectLocation)="selectedLocation($event)" [CompaniesList]="companies" [companyLocation]="userSelectedLocation" (selectRadius)="selectedRadius($event)"></app-agm>
+  </div>
+  <!-- יש להוסיף "צבע" ולכניס את הכל לתוך טופס עם לחצן שמור וכן לעמוד על שדות חובה חובה וכ-מ-ו-ב-ן הגוגל מפס -->
+  <br />
+  <input  class="btn btn-secondary" name="submit" type="submit" value="שמור" />
+</form>
+
+
+
+
+
+
+
+
+<!-- <form #Form id="form" (ngSubmit)="Save()">
+<label>בחר קטגוריה</label><br/>
+<select (change)="ItemsToCategory($event)">
+  <option></option>
+  <option name="option" *ngFor="let item of categories" value="{{item.CategoryId}}">{{item.CategoryName}}</option>
+</select><br/>
+<label>בחר פריט</label><br/>
+<select (change)="SelectedItem($event)">
+  <option name="ItemId" *ngFor="let i of ItemsToSelectedCategory" [(ngModel)]="lost.ItemId" value="{{i.ItemId}}">{{i.ItemName}}</option>
+</select><br/>
+<label name="itemNamel" *ngIf ="lost.ItemId===1">שם פריט</label>
+<input type="text" *ngIf ="lost.ItemId===1" name="ItemName" [(ngModel)]="lost.ItemName"/>
+<label>תאריך</label><br/>
+<input type="datetime" name="lostDate" [(ngModel)]="lost.LostDate"/><br/>
+<label>תאור</label><br/>
+<input type="text" name="lostDescription" [(ngModel)]="lost.LostDescription"/><br/>
+<select (change)="MaterialSelected($event)">
+  <option></option>
+  <option name="materialId" *ngFor="let item of materials" value="{{item.MaterialId}}">{{item.MaterialName}}</option>
+</select><br/>
+יש להוסיף "צבע" ולכניס את הכל לתוך טופס עם לחצן שמור וכן לעמוד על שדות חובה חובה וכ-מ-ו-ב-ן הגוגל מפס
+<br/>
+<input type="submit" value="שמור" />
+</form> -->

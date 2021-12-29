@@ -1,0 +1,11 @@
+
+#form{
+    direction: rtl;
+    text-align: center;
+}
+
+div{
+    /* margin-right: 10vw; */
+    height: 55vh;
+    /* width: 80vw; */
+}

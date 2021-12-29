@@ -1,0 +1,273 @@
+<p>
+
+</p>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+  <!-- <h1>הפריטים שלי</h1> ->
+
+
+  <h2>Tabs</h2>
+<p>Click on the buttons inside the tabbed menu:</p> -->
+
+  <div class="tab">
+    <button class="tablinks" (click)="openCity($event, 'London')">אבדות</button>
+    <button class="tablinks" (click)="openCity($event, 'Paris')">מציאות</button>
+    <button id="defaultOpen" class="tablinks" (click)="openCity($event, 'Tokyo')">הכל</button>
+  </div>
+
+
+  <div id="London" class="tabcontent">
+    <h3>אבדות</h3>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>פריט</th>
+          <th>קטגוריה</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let l of losts, let index = index">
+          <td>{{lostsItemsName[index]}}</td>
+          <td>{{lostsCategoriesName[index]}}</td>
+          <td> <button [disabled]="l.LostStatus" (click)="UpdadeLost(index)" class="btn btn-light">עריכה</button></td>
+          <td><button [disabled]="l.LostStatus" (click)="DeleteLost(index)" class="btn btn-light">מחק</button></td>
+          <td><button [disabled]="l.LostStatus" (click)="SearchLost(index)" class="btn btn-light">חפש</button></td>
+          <td><button [disabled]="l.LostStatus" (click)="Statusl(index)" class="btn btn-light">הושב לבעליו</button></td>
+          <td>
+            <h4 *ngIf="l.LostStatus"> <span class="badge badge-pill badge-danger">הושב לבעליו</span></h4>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div id="Paris" class="tabcontent">
+    <h3>מציאות</h3>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>פריט</th>
+          <th>קטגוריה</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let l of founds, let index = index">
+          <td>{{foundsItemsName[index]}}</td>
+          <td>{{foundsCategoriesName[index]}}</td>
+          <td> <button [disabled]="l.FoundStatus" (click)="UpdadeFound(index)" class="btn btn-light">עריכה</button></td>
+          <td><button [disabled]="l.FoundStatus" (click)="DeleteFound(index)" class="btn btn-light">מחק</button></td>
+          <td><button [disabled]="l.FoundStatus" (click)="SearchFound(index)" class="btn btn-light">חפש</button></td>
+          <td><button [disabled]="l.FoundStatus" (click)="Statusf(index)" class="btn btn-light">הושב לבעליו</button></td>
+          <td>
+            <h4 *ngIf="l.FoundStatus"> <span class="badge badge-pill badge-danger">הושב לבעליו</span></h4>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div id="Tokyo" class="tabcontent">
+    <!-- <h3>הכל</h3> -->
+    <!-- <h3>כל הפריטים</h3> -->
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>פריט</th>
+          <th>קטגוריה</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+    </table>
+    <h3>מציאות</h3>
+    <table class="table table-hover">
+      <tbody>
+        <tr *ngFor="let l of founds, let index = index">
+          <td>{{foundsItemsName[index]}}</td>
+          <td>{{foundsCategoriesName[index]}}</td>
+          <td> <button [disabled]="l.FoundStatus" (click)="UpdadeFound(index)" class="btn btn-light">עריכה</button></td>
+          <td><button [disabled]="l.FoundStatus" (click)="DeleteFound(index)" class="btn btn-light">מחק</button></td>
+          <td><button [disabled]="l.FoundStatus" (click)="SearchFound(index)" class="btn btn-light">חפש</button></td>
+          <td><button [disabled]="l.FoundStatus" (click)="Statusf(index)" class="btn btn-light">הושב לבעליו</button></td>
+          <td>
+            <h4 *ngIf="l.FoundStatus"> <span class="badge badge-pill badge-danger">הושב לבעליו</span></h4>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>אבדות</h3>
+    <table class="table table-hover">
+      <!-- <thead>
+      <tr>
+        <th>פריט</th>
+        <th>קטגוריה</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead> -->
+      <tbody>
+        <tr *ngFor="let l of losts, let index = index">
+          <td>{{lostsItemsName[index]}}</td>
+          <td>{{lostsCategoriesName[index]}}</td>
+          <td> <button [disabled]="l.LostStatus" (click)="UpdadeLost(index)" class="btn btn-light">עריכה</button></td>
+          <td><button [disabled]="l.LostStatus" (click)="DeleteLost(index)" class="btn btn-light">מחק</button></td>
+          <td><button [disabled]="l.LostStatus" (click)="SearchLost(index)" class="btn btn-light">חפש</button></td>
+          <td><button [disabled]="l.LostStatus" (click)="Statusl(index)" class="btn btn-light">הושב לבעליו</button></td>
+          <!-- <td><button  disabled *ngIf="l.LostStatus" class="btn btn-outline-danger" >הושב לבעליו</button></td> -->
+          <td>
+            <h2 *ngIf="l.LostStatus"> <span class="badge badge-pill badge-danger">הושב לבעליו</span></h2>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+
+
+<!-- 
+<div class="w3-container">
+  <h2>Tabs in a Grid</h2>
+
+  <div class="w3-row">
+    <a (click)="openCity($event, 'London');">
+      <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">London</div>
+    </a>
+    <a (click)="openCity($event, 'Paris');">
+      <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Paris</div>
+    </a>
+    <a (click)="openCity($event, 'Tokyo');">
+      <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Tokyo</div>
+    </a>
+  </div> -->
+<!-- 
+  <div id="London" class="w3-container city" style="display:none">
+    <h2>London</h2>
+    <p>London is the capital city of England.</p>
+  </div>
+
+  <div id="Paris" class="w3-container city" style="display:none">
+    <h2>Paris</h2>
+    <p>Paris is the capital of France.</p> 
+  </div>
+
+  <div id="Tokyo" class="w3-container city" style="display:none">
+    <h2>Tokyo</h2>
+    <p>Tokyo is the capital of Japan.</p>
+  </div> -->
+<!-- </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div>
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>קטגוריה</th>
+        <th>פריט</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of losts, let index = index" >
+        <td>{{itemsName[index]}}</td>
+        <td>{{categoriesName[index]}}</td>
+        <td> <button class="btn btn-light" >עריכה</button></td>
+        <td><button class="btn btn-light" >מחק</button></td>
+        <td><button class="btn btn-light" >חפש</button></td>
+        <td><button class="btn btn-light" >הושב לבעליו</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+<!-- </body>
+<!DOCTYPE html>
+<html>
+<body> -->
+
+<!-- <script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+    -->
+
+<!-- </html> -->
+
+
+
+
+<!-- <div>
+    <div *ngFor="let i of losts, let index = index">
+      <button class="btn btn-danger" >עריכה</button>
+      <button class="btn btn-danger" >מחק</button>
+      <button class="btn btn-danger" >חפש</button>|
+      <button class="btn btn-danger" >הושב לבעליו</button>
+      <mat-label>:פריט {{itemsName[index]}}</mat-label>
+      <mat-label>:קטגוריה</mat-label>
+    </div>
+    <!-<app-item-button *ngFor="let item of losts; let x = index" value="{{item.itemName}}">{{item.itemName}}</app-item-button> ->
+  </div> -->

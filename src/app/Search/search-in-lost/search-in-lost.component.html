@@ -1,0 +1,60 @@
+<form #Form name="form" id="form" (ngSubmit)="Search()">
+  <p><label>מה מצאת?</label></p>
+  <app-auto-filter-category (CategorySelected)="SelectedCategory($event)"></app-auto-filter-category>
+
+  <!-- <select name="select"  (change)="SelectedCategory($event)">
+  <option></option>
+  <option name="option" *ngFor="let item of categories" value="{{item.CategoryId}}">{{item.CategoryName}}</option>
+</select><br/> -->
+  <p><label>היכן מצאת?</label>
+  </p>
+
+  <div class="tab">
+    <!-- <button class="tablinks" (click)="openCity($event, 'Paris')">תחבורה ציבורית</button> -->
+    <button type="button" class="tablinks" (click)="openCity($event, 'Tokyo')" id="defaultOpen">מפה</button>
+  </div>
+
+  <div id="Paris" class="tabcontent">
+    <!-- <h3>תחבורה ציבורית</h3> -->
+    <h3>תחבורה ציבורית</h3>
+    <select (change)="selectedBusRoutes($event)">
+      <option name="ma" *ngFor="let item of filteredOptions" value="{{item.Description}}">{{item.Description}}</option>
+    </select><br />
+    <select (change)="selectedBusRoutes($event)">
+      <option name="mat" *ngFor="let item of filteredOptions" value="{{item.BusNumber}}">{{item.BusNumber}}</option>
+    </select><br />
+    <select (change)="selectedBusRoutes($event)">
+      <option name="mt" *ngFor="let item of Agencies" value="{{item.Name}}">{{item.Name}}</option>
+    </select><br />
+    <!-- <mat-form-field appearance="fill">
+      <mat-label>Choose an option</mat-label>
+      <select>
+        <mat-option *ngFor="let option of filteredOptions" [value]="option.Description">
+          {{option.Description}}</mat-option>
+        <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
+        <mat-option value="option3">Option 3</mat-option>
+      </select>
+    </mat-form-field> -->
+    <!-- <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>busses</mat-label>
+    <input  type="text" placeholder="התחל להקליד" aria-label="Number" matInput [formControl]="busControl"
+      name="BusDescription" [matAutocomplete]="auto" (keydown.enter)="$event.preventDefault()">
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="BusSelected($event)"
+      style="text-align: right;">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option.BusName">
+        {{option.BusName}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field> -->
+  </div>
+
+  <div id="Tokyo" class="tabcontent">
+    <!-- google maps -->
+    <app-agm (selectLocation)="selectedLocation($event)" [companyLocation]="companyLocation"
+      (selectRadius)="selectedRadius($event)"></app-agm>
+      <!-- [CompaniesList]="companies" רשימת חברות מיותר -->
+  </div>
+  <button class="btn btn-secondary" name="submit" type="submit">חפש</button>
+</form>
+<!--  [ngModelOptions]="{standalone: true}" -->
+<!-- [(ngModel)]="CategorySelectedId" -->

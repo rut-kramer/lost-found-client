@@ -1,0 +1,133 @@
+<!-- <label>
+לסדר את כל הפונקציות<br>
+לט ולן כולם שוים לזיס
+(לסדר את הזם שיהיה שוה בכל המקומות(קופץ אחורה בלחיצה על המפה
+</label> -->
+
+
+<div id="container">
+  <!--תבנית לא טובה בכלל!!!!!!!!!!!!!!1 
+    <mat-google-maps-autocomplete [appearance]="appearance.OUTLINE"
+  (onAutocompleteSelected)="onAutocompleteSelected($event)"
+  (onLocationSelected)="onLocationSelected($event)">
+</mat-google-maps-autocomplete> -->
+
+  <!-- <h1>Angular Google Maps with Places Search Example</h1> -->
+  <!-- <div class="form-group">
+    <label>Enter address</label>  מפה העתקתי פונ' וכולי
+    <input type="text" [value]="address" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+  </div>
+   -->
+
+
+
+
+  <mat-form-field  class="example-full-width" appearance="outline">
+    <mat-label>הכנס כתובת</mat-label>
+    <input matInput [value]="address" (keydown.enter)="$event.preventDefault()" matGoogleMapsAutocomplete
+      (onAutocompleteSelected)="onAutocompleteSelected($event)" (onLocationSelected)="onLocationSelected($event)">
+  </mat-form-field>
+  <!--סת ם קישורים לאיקונים
+      Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
+  <agm-map 
+  [latitude]="lat" 
+  [longitude]="lng" 
+  [zoom]="zoom" 
+  [disableDefaultUI]="false" 
+  [zoomControl]="false"
+  (mapClick)="mapClicked($event)">
+    <agm-marker 
+    [markerClickable]="true" 
+    [latitude]="lat" 
+    [longitude]="lng" 
+    [label]="mtitle">
+      <agm-info-window>
+        <strong>{{address}}</strong>
+      </agm-info-window>
+    </agm-marker>
+    <!--ליצור מרקר והנתונים יהיו מקושרים לנתונים שלו 
+    <agm-marker 
+      *ngFor="let m of markers; let i = index"
+      (markerClick)="clickedMarker(m.label, i)"
+      [latitude]="m.lat"
+      [longitude]="m.lng"
+      [label]="m.label"
+      [markerDraggable]="m.draggable"
+      (dragEnd)="markerDragEnd(m, $event)">
+      
+ </agm-marker> -->
+ <agm-marker 
+      *ngFor="let m of CompaniesList; let i = index"
+      [latitude]="m.UserLat"
+      [longitude]="m.UserLng"
+      [markerDraggable]=false
+      [iconUrl]="url"
+      [title]="m.UserName"  
+      [label]="m.UserName">      
+      <agm-info-window>
+        <strong>{{m.UserName}}</strong>
+      </agm-info-window>
+      <!-- [label]="m.UserName" -->
+ </agm-marker>
+    <agm-circle *ngFor="let c of circle" 
+    [latitude]="c.latitude" 
+    [longitude]="c.longitude" 
+    [radius]="200"
+    [fillColor]="'red'" 
+    [circleDraggable]="true" 
+    [editable]="true" 
+    (radiusChange)="radiusChange($event)"
+    (dragEnd)="circleDragEnd(c, $event)">
+    </agm-circle>
+  </agm-map>
+ <!--  <h5>כתובת: {{address}}<br>
+    <a>רוחב: {{lat}}</a> &nbsp;
+    <a>אורך: {{lng}}</a></h5> -->
+
+
+</div>
+<!-- <mat-google-maps-autocomplete [appearance]="appearance.OUTLINE"
+                              (onAutocompleteSelected)="onAutocompleteSelected($event)"
+                              (onLocationSelected)="onLocationSelected($event)">
+      </mat-google-maps-autocomplete>
+  -->
+
+
+<!-- <mat-form-field>
+    <mat-label>Address << using the directive >></mat-label>
+    <input matInput
+         matGoogleMapsAutocomplete
+         [country]="de"
+         (onAutocompleteSelected)="onAutocompleteSelected($event)"
+         (onLocationSelected)="onLocationSelected($event)">
+  </mat-form-field>-->
+
+<!--  -->
+
+<!-- 
+    app.component.html -->
+<!-- <div class="container"> -->
+
+<!-- <h1>Angular Google Maps with Places Search Example</h1> -->
+
+<!-- <div class="form-group">
+    <label>Enter address</label>
+    <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+  </div> -->
+<!-- 
+  <agm-map 
+  [latitude]="latitude" 
+  [longitude]="longitude" 
+  [zoom]="zoom">
+   -->
+<!-- <agm-marker 
+    [latitude]="latitude" 
+    [longitude]="longitude" 
+    [markerDraggable]="true"
+    (dragEnd)="markerDragEnd($event)"></agm-marker>
+  </agm-map> -->
+
+<!-- <h5>Address: {{address}}</h5>
+  <div>Latitude: {{latitude}}</div>
+  <div>Longitude: {{longitude}}</div>
+</div> -->

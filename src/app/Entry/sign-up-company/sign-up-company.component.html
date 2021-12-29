@@ -1,0 +1,100 @@
+<!-- <form id="form" #form (ngSubmit)="signUpCompany()">
+  <label #UserName>שם:</label><br/>
+  <input type="text" name="companyUserName" required="required" [(ngModel)]="newUser.UserName" /><br/>
+  <label #UserPassword>טלפון:</label><br/>
+  <input type="tel" name="companyUserMobile"  [(ngModel)]="newUser.UserMobile" /><br/>
+  <label #UserMail>דוא"ל:</label><br/>
+  <input type="email" name="companyUserMail"  required="required"  [(ngModel)]="newUser.UserMail"/><br/>
+  
+  <label #UserMail>לוגו:</label><br/>
+  <input type="file" name="companyUserLogo" [(ngModel)]="newUser.UserImage"/><br/>
+  <div><img [src]="newUser.UserImage"/></div>
+  <label #UserMail>כתובת:</label><br/>
+  <input type="email" name="companyUserAddress" required="required" [(ngModel)]="newUser.UserAddress"/><br/>
+  <label #UserPassword>סיסמא:</label><br/>
+  <input type="password" name="companyUserPassword"  required="required"  [(ngModel)]="newUser.UserPassword" /><br/>
+  <label #UserPassword>אימות סיסמא :</label><br/>
+  <input id="trueCompanyUserPassword" type="password" name="trueCompanyUserPassword" required="required"/><br/>
+  <input type="submit" [disabled]="form.invalid" value="הרשמה" />
+  <!- [style]="background-image:newUser.UserImage" 
+  />
+class="images"
+  ->
+</form> -->
+
+
+<div class="example-full-width" style="display: inline-flex; margin-bottom: 7%;">
+  <div>
+    <h2 style="color: rgb(209, 5, 39);">הרשמת חברה</h2>
+<div id="page1">
+  <div *ngIf="isSpinner" class="spinner">
+    <div class="spinner-grow text-danger"></div>
+  </div>
+  <div *ngIf="!isSpinner" style="text-align: center;">
+
+<mat-form-field style="direction: rtl;"  appearance="fill">
+    <mat-label #UserMail>דואר אלקטרוני:</mat-label>
+    <input matInput type="email" name="userMail" [(ngModel)]="newUser.UserMail" />
+  </mat-form-field>
+<br>
+  <mat-form-field style="direction: rtl;"  appearance="fill">
+    <mat-label #UserName>שם:</mat-label>
+    <input matInput type="text" name="userName" [(ngModel)]="newUser.UserName" />
+  </mat-form-field>
+
+  <mat-form-field style="direction: rtl;"  appearance="fill">
+    <mat-label #UserMobile>טלפון:</mat-label>
+    <input matInput type="tel" name="UserMobile" [(ngModel)]="newUser.UserMobile" />
+  </mat-form-field>
+
+  <br/>
+  <p><mat-label #UserLogo>לוגו:</mat-label>
+  <input type="file" class="form-control-file" (change)="readUrl($event)" name="companyUserLogo" [(ngModel)]="newUser.UserImage"/>
+ <img [src]="newUser.UserImage" />
+</p>
+  
+
+  <!-- <label #UserAddress>כתובת:</label><br/>
+  <input type="text" name="companyUserAddress" required="required" [(ngModel)]="newUser.UserAddress"/><br/> -->
+<!--   
+  <mat-form-field style="direction: rtl;"  appearance="fill">
+    <mat-label #UserAddress>כתובת:</mat-label>
+    <input matInput type="text" name="companyUserAddress" [(ngModel)]="newUser.UserAddress" />
+  </mat-form-field> -->
+
+  
+
+  <mat-form-field style="direction: rtl;"  appearance="fill">
+    <mat-label #UserPassword>סיסמא:</mat-label>
+    <input matInput type="password" name="userPassword" [(ngModel)]="newUser.UserPassword" />
+  </mat-form-field>
+<mat-form-field style="direction: rtl;"  appearance="fill">
+    <mat-label #UserPassword>אימות סיסמא:</mat-label>
+    <input matInput type="password" id="trueCompanyUserPassword" name="trueUserPassword" />
+  </mat-form-field></div>
+ 
+ 
+  <div mat-dialog-actions>
+    <!-- <button mat-raised-button color="accent" (click)="onNoClick()">ביטול</button>
+    <button mat-button color="accent">כניסה</button>  -->
+    <button type="button" class="btn btn-outline-danger" (click)="next()">הבא</button>
+    <button type="button" [disabled]="isSpinner" class="btn btn-outline-danger" (click)="onNoClick()">ביטול</button>
+    <!-- <button mat-button [mat-dialog-close]="messageText" cdkFocusInitial>Ok</button> -->
+  </div>
+ </div>
+  <div id="page2" hidden=true>
+    <!-- google maps -->
+    <div style="background: rgba(255, 255, 255, 0.466);     background: rgb(255 255 255 / 80%);    border-radius: 1%;    padding-right: 2%;    padding-top: 2%;    padding-left: 2%;">
+      <app-agm (selectLocation)="selectedLocation($event)" (selectRadius)="selectedRadius($event)"></app-agm>
+    </div>
+    <div mat-dialog-actions>
+      <!-- <button mat-raised-button color="accent" (click)="onNoClick()">ביטול</button>
+      <button mat-button color="accent">כניסה</button>  -->
+      <button type="button" [disabled]="isSpinner" class="btn btn-outline-danger" (click)="signUpCompany()">כניסה</button>
+      <button type="button" class="btn btn-outline-danger" (click)="previous()">הקודם</button>
+      
+      <!-- <button mat-button [mat-dialog-close]="messageText" cdkFocusInitial>Ok</button> -->
+    </div>
+  </div>
+</div>
+</div>
